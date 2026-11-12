@@ -76,6 +76,8 @@ def page(title: str, body: str, depth: int = 0, description: str = "") -> str:
 <footer class="foot">
 <p><strong>Co robi władza?</strong> (corobiwladza.pl) to niezależny prototyp. Nie jest to serwis Urzędu Miasta Gdyni.
 Wszystkie dane pochodzą z <a href="https://bip.um.gdynia.pl">Biuletynu Informacji Publicznej UM Gdyni</a>.</p>
+<p>Dane i opisy: <a href="https://creativecommons.org/licenses/by/4.0/deed.pl">CC BY 4.0</a>, podaj źródło: Co robi władza? (corobiwladza.pl).
+Kod: <a href="https://joinup.ec.europa.eu/page/eupl-text-11-12">EUPL-1.2</a>.</p>
 </footer>
 <script src="{up}filtr.js" defer></script>
 </body>
@@ -369,6 +371,10 @@ Gdy BIP nie publikuje treści uchwały, piszemy „brak opisu”.</p>
 <h2>Pobieranie</h2>
 <p>Program pobiera najwyżej 1 plik na sekundę i przedstawia się jako CoRobiWladza (corobiwladza.pl). Ostatnie zbudowanie danych: {e(d['meta']['zbudowano'][:10])}
 ({pob['zapytania_sieciowe']} zapytań do sieci, {pob['z_cache']} z pamięci podręcznej).</p>
-<p>Dane w formacie JSON i kod programu: repozytorium projektu.</p>
+<h2>Licencja</h2>
+<p>Dane w formacie JSON, opisy i teksty tej strony: <a href="https://creativecommons.org/licenses/by/4.0/deed.pl">CC BY 4.0</a>.
+Możesz z nich korzystać, także komercyjnie, jeśli podasz źródło: Co robi władza? (corobiwladza.pl).
+Kod programu: <a href="https://joinup.ec.europa.eu/page/eupl-text-11-12">EUPL-1.2</a>.
+Uchwały i ich projekty nie podlegają prawu autorskiemu (art. 4 ustawy o prawie autorskim i prawach pokrewnych).</p>
 </section>""", description="Skąd pochodzą dane i jak je sprawdzamy"), "utf-8")
     print(f"Strona zapisana w {out} ({len(res)} {plural(len(res), 'uchwała', 'uchwały', 'uchwał')}, {len(d['radni'])} profili radnych)")
