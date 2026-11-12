@@ -1,0 +1,279 @@
+{
+ "_opis": "Fragment danych z BIP Gdyni (12.11.2026): lista radnych i kluby, do testów.",
+ "radni": [
+  {
+   "id": "anisowicz-norbert",
+   "bip_post_id": "597065",
+   "bip_name": "Anisowicz Norbert"
+  },
+  {
+   "id": "aziewicz-dominik",
+   "bip_post_id": "597067",
+   "bip_name": "Aziewicz Dominik"
+  },
+  {
+   "id": "biernacik-dawid",
+   "bip_post_id": "597014",
+   "bip_name": "Biernacik Dawid"
+  },
+  {
+   "id": "bysewska-teresa",
+   "bip_post_id": "597075",
+   "bip_name": "Bysewska Teresa"
+  },
+  {
+   "id": "da-silva-de-oliveira-marcus",
+   "bip_post_id": "597090",
+   "bip_name": "da Silva de Oliveira Marcus"
+  },
+  {
+   "id": "dudzinski-marek",
+   "bip_post_id": "597081",
+   "bip_name": "Dudziński Marek"
+  },
+  {
+   "id": "dzierzynski-arkadiusz",
+   "bip_post_id": "597082",
+   "bip_name": "Dzierżyński Arkadiusz"
+  },
+  {
+   "id": "horala-beata",
+   "bip_post_id": "597063",
+   "bip_name": "Horała Beata"
+  },
+  {
+   "id": "klodzinski-jaroslaw",
+   "bip_post_id": "597083",
+   "bip_name": "Kłodziński Jarosław"
+  },
+  {
+   "id": "klopotek-glowczewska-natalia",
+   "bip_post_id": "599937",
+   "bip_name": "Kłopotek - Główczewska Natalia"
+  },
+  {
+   "id": "kramin-larysa",
+   "bip_post_id": "596990",
+   "bip_name": "Kramin Larysa"
+  },
+  {
+   "id": "krym-ewa",
+   "bip_post_id": "604847",
+   "bip_name": "Krym Ewa"
+  },
+  {
+   "id": "piesiewicz-lukasz",
+   "bip_post_id": "597084",
+   "bip_name": "Piesiewicz Łukasz"
+  },
+  {
+   "id": "rogala-emilia",
+   "bip_post_id": "597085",
+   "bip_name": "Rogała Emilia"
+  },
+  {
+   "id": "salomon-anna",
+   "bip_post_id": "597086",
+   "bip_name": "Salomon Anna"
+  },
+  {
+   "id": "srubarczyk-cichowska-mariola",
+   "bip_post_id": "597064",
+   "bip_name": "Śrubarczyk - Cichowska Mariola"
+  },
+  {
+   "id": "stolarczyk-pawel",
+   "bip_post_id": "597029",
+   "bip_name": "Stolarczyk Paweł"
+  },
+  {
+   "id": "strzalkowska-monika",
+   "bip_post_id": "597091",
+   "bip_name": "Strzałkowska Monika"
+  },
+  {
+   "id": "strzalkowski-lukasz",
+   "bip_post_id": "597093",
+   "bip_name": "Strzałkowski Łukasz"
+  },
+  {
+   "id": "szemiot-tadeusz",
+   "bip_post_id": "597026",
+   "bip_name": "Szemiot Tadeusz"
+  },
+  {
+   "id": "szpajer-anna",
+   "bip_post_id": "600984",
+   "bip_name": "Szpajer Anna"
+  },
+  {
+   "id": "tokarska-agnieszka",
+   "bip_post_id": "597097",
+   "bip_name": "Tokarska Agnieszka"
+  },
+  {
+   "id": "trojanowicz-ireneusz",
+   "bip_post_id": "597101",
+   "bip_name": "Trojanowicz Ireneusz"
+  },
+  {
+   "id": "ubych-jakub",
+   "bip_post_id": "597098",
+   "bip_name": "Ubych Jakub"
+  },
+  {
+   "id": "wojcik-malgorzata",
+   "bip_post_id": "597211",
+   "bip_name": "Wójcik Małgorzata"
+  },
+  {
+   "id": "zastawna-beata",
+   "bip_post_id": "597099",
+   "bip_name": "Zastawna Beata"
+  },
+  {
+   "id": "zielinska-joanna",
+   "bip_post_id": "597018",
+   "bip_name": "Zielińska Joanna"
+  },
+  {
+   "id": "zynis-jakub",
+   "bip_post_id": "605738",
+   "bip_name": "Żynis Jakub"
+  }
+ ],
+ "kluby": [
+  {
+   "nazwa": "Gdynia Niezależna",
+   "czlonkowie": [
+    {
+     "bip_name": "Biernacik Dawid",
+     "bip_post_id": "597014"
+    },
+    {
+     "bip_name": "Rogała Emilia",
+     "bip_post_id": "597085"
+    },
+    {
+     "bip_name": "Salomon Anna",
+     "bip_post_id": "597086"
+    },
+    {
+     "bip_name": "Trojanowicz Ireneusz",
+     "bip_post_id": "597101"
+    },
+    {
+     "bip_name": "Zastawna Beata",
+     "bip_post_id": "597099"
+    }
+   ]
+  },
+  {
+   "nazwa": "Koalicja Obywatelska, Ruchy Miejskie i Lewica",
+   "czlonkowie": [
+    {
+     "bip_name": "Anisowicz Norbert",
+     "bip_post_id": "597065"
+    },
+    {
+     "bip_name": "Aziewicz Dominik",
+     "bip_post_id": "597067"
+    },
+    {
+     "bip_name": "Bysewska Teresa",
+     "bip_post_id": "597075"
+    },
+    {
+     "bip_name": "da Silva de Oliveira Marcus",
+     "bip_post_id": "597090"
+    },
+    {
+     "bip_name": "Dzierżyński Arkadiusz",
+     "bip_post_id": "597082"
+    },
+    {
+     "bip_name": "Kramin Larysa",
+     "bip_post_id": "596990"
+    },
+    {
+     "bip_name": "Piesiewicz Łukasz",
+     "bip_post_id": "597084"
+    },
+    {
+     "bip_name": "Strzałkowska Monika",
+     "bip_post_id": "597091"
+    },
+    {
+     "bip_name": "Szemiot Tadeusz",
+     "bip_post_id": "597026"
+    },
+    {
+     "bip_name": "Tokarska Agnieszka",
+     "bip_post_id": "597097"
+    },
+    {
+     "bip_name": "Śrubarczyk - Cichowska Mariola",
+     "bip_post_id": "597064"
+    },
+    {
+     "bip_name": "Wójcik Małgorzata",
+     "bip_post_id": "597211"
+    },
+    {
+     "bip_name": "Żynis Jakub",
+     "bip_post_id": "605738"
+    }
+   ]
+  },
+  {
+   "nazwa": "Samorządność",
+   "czlonkowie": [
+    {
+     "bip_name": "Kłodziński Jarosław",
+     "bip_post_id": "597083"
+    },
+    {
+     "bip_name": "Krym Ewa",
+     "bip_post_id": "604847"
+    },
+    {
+     "bip_name": "Szpajer Anna",
+     "bip_post_id": "600984"
+    },
+    {
+     "bip_name": "Ubych Jakub",
+     "bip_post_id": "597098"
+    },
+    {
+     "bip_name": "Zielińska Joanna",
+     "bip_post_id": "597018"
+    }
+   ]
+  },
+  {
+   "nazwa": "Radni niezrzeszeni",
+   "czlonkowie": [
+    {
+     "bip_name": "Dudziński Marek",
+     "bip_post_id": "597081"
+    },
+    {
+     "bip_name": "Horała Beata",
+     "bip_post_id": "597063"
+    },
+    {
+     "bip_name": "Kłopotek - Główczewska Natalia",
+     "bip_post_id": "599937"
+    },
+    {
+     "bip_name": "Stolarczyk Paweł",
+     "bip_post_id": "597029"
+    },
+    {
+     "bip_name": "Strzałkowski Łukasz",
+     "bip_post_id": "597093"
+    }
+   ]
+  }
+ ]
+}
