@@ -1,0 +1,20 @@
+{
+  "id": "gdynia",
+  "nazwa": "Gdynia",
+  "organ": "Rada Miasta Gdyni",
+  "kadencja": "IX (2024–2029)",
+  "ustawowy_sklad": 28,
+  "adapter": "bip_um_gdynia",
+  "bip": {
+    "api": "https://api.um.gdynia.pl",
+    "www": "https://bip.um.gdynia.pl",
+    "kategoria_sesji_kadencji": 8853,
+    "kategoria_radnych": 9175,
+    "post_klubow": 601379,
+    "strona_wyszukiwarki_uchwal": "https://bip.um.gdynia.pl/wyszukiwarka-uchwal-rady-miasta-od-2000-roku,7485/wyszukiwarka-uchwal,504923"
+  },
+  "aliasy_nazwisk": {
+    "_opis": "Zapis z PDF głosowania -> zapis z listy radnych w BIP. Każdy wpis sprawdzony ręcznie 12.11.2026 (lista radnych BIP, kat. 9175).",
+    "Marcus da Silva": "da Silva de Oliveira Marcus"
+  }
+}
