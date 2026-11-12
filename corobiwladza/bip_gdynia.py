@@ -169,7 +169,6 @@ class BipGdynia:
                 "pdf_tresci": [a["url"] for a in texts],
                 "bip_wprowadzono": it.get("insert_date"),
                 "bip_data_wytworzenia": it.get("date_of_manufacture"),
-                "bip_odpowiedzialny": it.get("responsible_person"),
             })
         return out, self.source(r)
 

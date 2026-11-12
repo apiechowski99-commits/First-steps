@@ -7,7 +7,7 @@
   "organ": "Rada Miasta Gdyni",
   "kadencja": "IX (2024–2029)",
   "ustawowy_sklad": 28,
-  "zbudowano": "2026-11-12T01:05:55+00:00",
+  "zbudowano": "2026-11-12T01:20:44+00:00",
   "zrodla": {
    "sesja": {
     "url": "https://api.um.gdynia.pl/contents/posts/626304",
@@ -37,7 +37,7 @@
    "zapytania_sieciowe": 0,
    "z_cache": 80,
    "pobrano_bajtow": 0,
-   "czas_s": 1.5,
+   "czas_s": 1.4,
    "w_tym_oczekiwanie_s": 0.0
   }
  },
@@ -755,7 +755,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/a345211fb5760f966aecf21ee257ddb4.pdf",
     "sha256": "b83d00160981f676127e846a0d78411abcd2fcd2c97b85249e409f430582ee31",
@@ -883,7 +882,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/f217563ebb6aa8966e0e82793b528807.pdf",
     "sha256": "33d3647b8f61ca1b043f7ad2d3ba812b701fa2b37008fc83e478e1d7d6ecd1ac",
@@ -1011,7 +1009,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/6a30360abd92122039e07c7ea2c220ea.pdf",
     "sha256": "d4de0c04bf0a26f0e6b0a99afc25049e4022d576b083d741934222b0b487e22c",
@@ -1139,7 +1136,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/74ba4f47630ef413fc31f01d81442253.pdf",
     "sha256": "cb3997404f13cbad1ecd4c74668f66448818c8a49505c557c33db5bcd1ca8ce2",
@@ -1265,7 +1261,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/bc4f47f9e5542325125732974d7ef0c4.pdf",
     "sha256": "30001a6e4c9c0231395c58ee2c044c26512b7b96474fc615870ebc97c59dc094",
@@ -1393,7 +1388,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/61a88e0c4c01af6f1ea74f12ccfa4797.pdf",
     "sha256": "4a227f25239d5211288db7416bb8745166813c0cadc1614238e18f5bbcfac299",
@@ -1521,7 +1515,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/70c6545f301186c5fde220f9651d7f67.pdf",
     "sha256": "c7caf87d640be71aa8aaa608133ab0f55a5f5f12e8909290f2d8fde70593cb71",
@@ -1649,7 +1642,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/5f64ffc632271387a0fe0d84e8d7615a.pdf",
     "sha256": "8aa85a8d4f189cd7876ff49825b442263cf694f25c3f24f9c703b47a7f77415f",
@@ -1777,7 +1769,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/544a364b37f2b1deaa69bc34f116e6ad.pdf",
     "sha256": "ecaeaef5b9f9aab9300e57743ec52afbcbb8ccf95b7f1a68fae69aafe128af86",
@@ -1905,7 +1896,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/8c78a76ff5477da9129b0a8738739b33.pdf",
     "sha256": "55e4c300f35345c4556b7d2d00106897b3d9fec0ba0954a3e909eb61976a4b36",
@@ -2033,7 +2023,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/ff4b6639ca8789aa9c02b3ccda324700.pdf",
     "sha256": "b32669908addc7d08f14d44b9459981d54af2d96987667da2e7ee34d2934c9f6",
@@ -2141,7 +2130,7 @@
      "tytul_pdf": "Uchwała nr XXXVI/909/26 Rady Miasta Gdyni z dnia 28 października 2026 r. zmieniająca uchwałę w sprawie ustalenia statutu gminnej jednostki budżetowej Żłobek „Niezapominajka”",
      "stron": 2,
      "znakow_tekstu": 3146,
-     "ma_uzasadnienie": false
+     "ma_uzasadnienie": true
     }
    ],
    "punkt_porzadku": "5.12",
@@ -2161,7 +2150,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/c91e221e8f1aa4d30aab2fc503ba4412.pdf",
     "sha256": "22228abf1308f01dccd309c27ae487997140b4148a7ecb158e9d1c09ada16320",
@@ -2289,7 +2277,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/4c4836ff25c9d23f89a70349490834eb.pdf",
     "sha256": "e38a1e63c80db7d06494e96a0d0e15d716c1f8b67c04d075af01bdf6eb99a8de",
@@ -2417,7 +2404,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/1d3634cc8ad13b030f07914de7526e34.pdf",
     "sha256": "4e0f9100e233c0a4341474fc911303958c5fa762054ca3364022cd3e4a96ce05",
@@ -2545,7 +2531,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/dea19eaef1e7ca94659c1a8e4d7787ab.pdf",
     "sha256": "206f8f788eeac5fa3867c15708044e1ce1a76aae3d0bd0da9f610c1ee0a6bd09",
@@ -2673,7 +2658,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/0cbe43a6c137ddba91be38ac4e261fc3.pdf",
     "sha256": "5945a5ee1f192871fa0bda7515e0ff529702ee2844d6f355b4c7aa3444bb35f5",
@@ -2801,7 +2785,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/7544918e8942db015d4c5f5732db9f67.pdf",
     "sha256": "dcb36b3dbebbd0428f1ee0b644eef6f0064a5bcada1ef8291ef2aba551f22f00",
@@ -2929,7 +2912,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/1a1f7c5e2c1bcb92ac32d0d374a85ee4.pdf",
     "sha256": "deb46b2725a02a35caafce93d456eb2394b25e1bc307ba39cfd4f81402030f1f",
@@ -3057,7 +3039,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/0b408cc2ec0d3d394058fe1bfd3de267.pdf",
     "sha256": "7f7554589ae9d18ea91c0a807aea0e81397a4a763cc64c3a02ea210d223f2bdd",
@@ -3185,7 +3166,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/ce0bbf44b07ec09fe3deafff95a532bc.pdf",
     "sha256": "3546355f34a2ac9e0bdc05a0ae603a66f00c2360a422f4a4f872e761e74ee385",
@@ -3313,7 +3293,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/feedd73a007ec86c67fd240423a4854a.pdf",
     "sha256": "730a3ee114e51c79cde42b004aa2c6ff8a3c7a37c4a363a103a47f7a7c63fd4b",
@@ -3443,7 +3422,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/4f2f88d70ecc62f6e4c4726dfd9784ea.pdf",
     "sha256": "8af95415abb637b58c13980856930ed0dd8fd28e5cd1d712d99e22482a05f770",
@@ -3571,7 +3549,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/4c0c81cb44201b8e7898ab1cbc2e5038.pdf",
     "sha256": "c1f6c37b7e57a499b3946d4383c35a103d37ac3515269e81adbf337f1505eb63",
@@ -3699,7 +3676,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/370816141f9861bf8e27d99c07307b10.pdf",
     "sha256": "71d3616469592317f377c8fd9af7232e8e61745c7afecae69660cf7a4bc9d5c1",
@@ -3827,7 +3803,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/8336048be6a371bbf5430ba717178280.pdf",
     "sha256": "726afdd3a75d84b09635a7fbc755ecf69e270fbde9e7a07da72ee68ba6df8335",
@@ -3955,7 +3930,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/0b1242e40bec22b48859903965d3da49.pdf",
     "sha256": "ea938100b1a506f3276ad930375c805c268a2cd30e68fc0bad61f3061c00db65",
@@ -4083,7 +4057,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/f7dbfbc03b5533c57857b3f5359da36c.pdf",
     "sha256": "976e228e548476bcd8da038e02ba5fbe6a8050b3df574b2892a8334b2ebeebdf",
@@ -4191,7 +4164,7 @@
      "tytul_pdf": "Uchwała nr XXXVI/925/26 Rady Miasta Gdyni z dnia 28 października 2026 r. zmieniająca uchwałę w sprawie określenia zadań z zakresu rehabilitacji zawodowej i społecznej osób niepełnosprawnych oraz wysokości środków finansowych Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych na ich realizację w 2026 r.",
      "stron": 3,
      "znakow_tekstu": 6415,
-     "ma_uzasadnienie": false
+     "ma_uzasadnienie": true
     }
    ],
    "punkt_porzadku": "Aneks 1",
@@ -4211,7 +4184,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/6a5fec20a156b71e7f04feca41aeef9f.pdf",
     "sha256": "1c65b3fa9e0806a4e0319ab8fd802a8be96559ddfde7c810c2b2e5bd3179f574",
@@ -4319,7 +4291,7 @@
      "tytul_pdf": "Uchwała nr XXXVI/926/26 Rady Miasta Gdyni z dnia 28 października 2026 r. w sprawie określenia zadań, na które przeznaczone będą środki Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych w 2027 r.",
      "stron": 3,
      "znakow_tekstu": 5703,
-     "ma_uzasadnienie": false
+     "ma_uzasadnienie": true
     }
    ],
    "punkt_porzadku": "Aneks 2",
@@ -4339,7 +4311,6 @@
    ],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/9e46ef5e42456ac9ca235b6b1f85e082.pdf",
     "sha256": "5e3f3193394c8392428954ef1a8f5df66c78441a83346a880aa13e085a34169e",
@@ -4465,7 +4436,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/eeab2acf7ce8fd72f963f7c0a96f6cb3.pdf",
     "sha256": "f602c480d2a4608fd3aa433aa48da216ea47f74323368dddca134444fcf8f620",
@@ -4581,7 +4551,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/d84a230c03dbed0458f25bed6ea6a3c2.pdf",
     "sha256": "01f7583593f2bcf36f15c99829a3def0b7bed995c78080bb2cada4ce25b8c3dc",
@@ -4701,7 +4670,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/adc4cf32c3d00a15121c9e95b7ddaf56.pdf",
     "sha256": "b70e5eea516d57c0e2f5e1e72b6ac769f1d3167a334449425f0be30b1512c2a9",
@@ -4819,7 +4787,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/43e271cfb9ce298871d8ca8bc9c11852.pdf",
     "sha256": "824c18870ecbeb5d559899998b230662dcea6e4fd126d1524892292352f3706b",
@@ -4937,7 +4904,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/65cb6dbd3d48a65f906331e475d4c8a1.pdf",
     "sha256": "45f412402ac9b6904be1d8d95d6e94972eb4bcc75f61208ba5634bf77e8ab962",
@@ -5055,7 +5021,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/6ecebef19a76327d85c0b98e6b5d3b34.pdf",
     "sha256": "842cd0a447815a8d159ed46dc7d4d4be8fbb0411467b617ad75b0efc4e9777e2",
@@ -5171,7 +5136,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/b56a522f511f84cc6e97bc2d01864348.pdf",
     "sha256": "29f59d506a554fe5fac902dc2c4bd052bbe29124f09bc51db74c5b97f031987c",
@@ -5291,7 +5255,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/40ae53e72951f8e7ce777400b44b6a8b.pdf",
     "sha256": "c8c20f0bcd9e28a16027d83592168e1cbec60eec857db4baf55e3e27c0befeb0",
@@ -5409,7 +5372,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/572f068469c3134b38abeaefe6cff51f.pdf",
     "sha256": "cff0245fb63cd00bfd44d5e0cb1bba5c2a63dc7261aca60d3e3ca9630bd1fe2f",
@@ -5525,7 +5487,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/a9f469d5edc8fe3f274637ef460a74f8.pdf",
     "sha256": "1a5662c81511c6e9b2b1513d421bb7c869b2ecbc305176d1b986e29107ffd745",
@@ -5643,7 +5604,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/393fba8db48c8ec2cb36c69c043dc78a.pdf",
     "sha256": "3ab3858a322e713e021ab987373bfac73551dfc7f3d472235b8bcdddd8dde7f1",
@@ -5763,7 +5723,6 @@
    "pdf_tresci": [],
    "bip_wprowadzono": "30.10.2026",
    "bip_data_wytworzenia": "30.10.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/451a788a33a6490ca951f4e678f3cc7c.pdf",
     "sha256": "6337e5f722c82e9b4ab46b7eefac43984dcf169859ad5b9f2405b862eb3b7820",
@@ -5881,7 +5840,6 @@
    ],
    "bip_wprowadzono": "02.11.2026",
    "bip_data_wytworzenia": "02.11.2026",
-   "bip_odpowiedzialny": "Magdalena Anuszek",
    "glosowanie": {
     "pdf_url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/9c7839be200929ae31a79f7db6dd293f.pdf",
     "sha256": "1c683d81a89fdbc2362127a7fe9ae304e19259b7b1afced4dc17df95b054f07e",
