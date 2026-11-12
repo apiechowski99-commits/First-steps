@@ -33,50 +33,95 @@ def _count_sentences(text: str) -> int:
     t = text.strip()
     if not t or t[-1] not in ".!?":
         return 0
-    inner = re.sub(r"\b(?:ul|np|m\.in|ok|tzw|r|nr|pkt|ust|al|godz|zł)\.", "_", t[:-1])
+    inner = re.sub(r"\b(?:ul|np|m\.in|ok|tzw|r|nr|pkt|ust|al|godz|zł)\.", "_", t[:-1], flags=re.I)
     return 1 + len(_SENTENCE_END.findall(inner))
+
+
+MAX_HEADLINE = 100
+
+
+def _check_sentence(label: str, z: dict, haystack: str, where: str, max_len: int | None = None) -> list[str]:
+    """Jedno zdanie z cytatami: dokładnie jedno zdanie, bez słów oceniających, każdy cytat w źródle."""
+    errs = []
+    text = z.get("tekst", "")
+    if _count_sentences(text) != 1:
+        errs.append(f"{label}: to nie jest dokładnie jedno zdanie: {text!r}")
+    if max_len and len(text) > max_len:
+        errs.append(f"{label}: za długie ({len(text)} znaków, limit {max_len})")
+    if m := _STOP_RE.search(text):
+        errs.append(f"{label}: słowo oceniające {m.group(0)!r}")
+    if not z.get("cytaty"):
+        errs.append(f"{label}: brak cytatu-źródła")
+    for q in z.get("cytaty", []):
+        if normalize_ws(q) not in haystack:
+            errs.append(f"{label}: cytatu nie ma w {where}: {q!r}")
+    return errs
 
 
 def check_descriptions(session: dict, opisy: dict, texts: dict[str, str]) -> list[str]:
     """texts: numer uchwały -> pełny tekst wszystkich jej PDF z treścią."""
     errs = []
     entries = opisy.get("uchwaly", {})
+    themes = {t["id"]: t for t in opisy.get("tematy", [])}
     numbers = {r["numer"] for r in session["uchwaly"]}
     for extra in sorted(set(entries) - numbers):
         errs.append(f"Opis dla uchwały {extra}, której nie ma w danych sesji")
     for r in session["uchwaly"]:
         num = r["numer"]
         entry = entries.get(num)
-        if not r["tresc"]:
-            if entry and entry.get("zdania"):
-                errs.append(f"{num}: brak treści uchwały w BIP, a jest opis. Ma być „{NO_DESCRIPTION}”")
+        if not entry:
+            errs.append(f"{num}: brak wpisu (temat i nagłówek są wymagane dla każdej uchwały)")
             continue
-        if not entry or not entry.get("zdania"):
+        if entry.get("temat") not in themes:
+            errs.append(f"{num}: nieznany temat {entry.get('temat')!r}")
+        head = entry.get("naglowek")
+        if not head:
+            errs.append(f"{num}: brak nagłówka")
+        if not r["tresc"]:
+            # Bez treści w BIP: tylko nagłówek z tytułu w BIP, żadnego opisu.
+            for field in ("zdania", "kogo_dotyczy", "kontekst"):
+                if entry.get(field):
+                    errs.append(f"{num}: brak treści uchwały w BIP, a jest pole {field!r}. Ma być „{NO_DESCRIPTION}”")
+            if head:
+                if head.get("zrodlo") != "tytul_bip":
+                    errs.append(f"{num}: nagłówek uchwały bez treści musi pochodzić z tytułu w BIP")
+                errs += _check_sentence(f"{num}, nagłówek", head, normalize_ws(r["tytul_bip"]), "tytule BIP", MAX_HEADLINE)
+            continue
+        haystack = normalize_ws(texts[num])
+        if head:
+            errs += _check_sentence(f"{num}, nagłówek", head, haystack, "PDF uchwały", MAX_HEADLINE)
+        if not entry.get("kogo_dotyczy"):
+            errs.append(f"{num}: brak pola „kogo dotyczy”")
+        else:
+            errs += _check_sentence(f"{num}, kogo dotyczy", entry["kogo_dotyczy"], haystack, "PDF uchwały")
+        if entry.get("kontekst"):
+            errs += _check_sentence(f"{num}, kontekst", entry["kontekst"], haystack, "PDF uchwały")
+        zd = entry.get("zdania") or []
+        if not zd:
             errs.append(f"{num}: jest treść uchwały, a nie ma opisu")
             continue
-        zd = entry["zdania"]
         if not 1 <= len(zd) <= 2:
             errs.append(f"{num}: opis ma {len(zd)} zdań (dozwolone 1–2)")
-        haystack = normalize_ws(texts[num])
         for i, z in enumerate(zd, 1):
-            if _count_sentences(z["tekst"]) != 1:
-                errs.append(f"{num}, zdanie {i}: to nie jest dokładnie jedno zdanie: {z['tekst']!r}")
-            if m := _STOP_RE.search(z["tekst"]):
-                errs.append(f"{num}, zdanie {i}: słowo oceniające {m.group(0)!r}")
-            if not z.get("cytaty"):
-                errs.append(f"{num}, zdanie {i}: brak cytatu-źródła")
-            for q in z.get("cytaty", []):
-                if normalize_ws(q) not in haystack:
-                    errs.append(f"{num}, zdanie {i}: cytatu nie ma w PDF uchwały: {q!r}")
+            errs += _check_sentence(f"{num}, zdanie {i}", z, haystack, "PDF uchwały")
+    for t in opisy.get("tematy", []):
+        if t.get("wstep"):
+            src = t.get("wstep_zrodlo")
+            if src not in texts:
+                errs.append(f"Temat {t['id']}: wstęp wskazuje uchwałę spoza sesji: {src!r}")
+            else:
+                errs += _check_sentence(f"Temat {t['id']}, wstęp", t["wstep"], normalize_ws(texts[src]), f"PDF uchwały {src}")
     return errs
 
 
 def description_for(opisy: dict, resolution: dict) -> dict:
     """Opis do wyświetlenia: zdania albo „brak opisu” z powodem."""
-    if not resolution["tresc"]:
-        return {"brak": True, "powod": "BIP nie publikuje treści tej uchwały, jest tylko wynik głosowania."}
     entry = opisy["uchwaly"][resolution["numer"]]
-    return {"brak": False, "zdania": entry["zdania"]}
+    base = {"temat": entry["temat"], "naglowek": entry["naglowek"]}
+    if not resolution["tresc"]:
+        return {**base, "brak": True, "powod": "BIP nie publikuje treści tej uchwały, jest tylko wynik głosowania."}
+    return {**base, "brak": False, "zdania": entry["zdania"], "kogo_dotyczy": entry["kogo_dotyczy"],
+            "kontekst": entry.get("kontekst")}
 
 
 # --- krok 5: „A co dla mnie?” ---
