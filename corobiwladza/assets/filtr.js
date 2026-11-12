@@ -13,6 +13,9 @@
       c.hidden = !ok;
       if (ok) shown++;
     });
+    Array.prototype.forEach.call(document.querySelectorAll("section.theme"), function (sec) {
+      sec.hidden = !sec.querySelector(".card:not([hidden])");
+    });
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-f") === f)); });
     if (out) out.textContent = "Widocznych uchwał: " + shown + " z " + cards.length;
   }

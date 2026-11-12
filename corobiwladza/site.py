@@ -22,9 +22,11 @@ from .votes import OPTIONS
 ASSETS = Path(__file__).parent / "assets"
 
 LABEL = {"za": "Za", "przeciw": "Przeciw", "wstrzymal_sie": "Wstrzymali się",
-         "brak_glosu": "Brak głosu", "nieobecni": "Nieobecni"}
-LABEL_ONE = {"za": "za", "przeciw": "przeciw", "wstrzymal_sie": "wstrzymał(a) się",
-             "brak_glosu": "brak głosu", "nieobecni": "nieobecny(-a)"}
+         "brak_glosu": "Nie głosowali", "nieobecni": "Nieobecni"}
+LABEL_LOW = {"za": "za", "przeciw": "przeciw", "wstrzymal_sie": "wstrzymali się",
+             "brak_glosu": "nie głosowali", "nieobecni": "nieobecni"}
+LABEL_ONE = {"za": "Głosował(a) za", "przeciw": "Głosował(a) przeciw", "wstrzymal_sie": "Wstrzymał(a) się",
+             "brak_glosu": "Nie głosował(a)", "nieobecni": "Nieobecny(-a)"}
 MONTHS = ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia",
           "września", "października", "listopada", "grudnia"]
 
@@ -85,30 +87,42 @@ Kod: <a href="https://joinup.ec.europa.eu/page/eupl-text-11-12">EUPL-1.2</a>.</p
 """
 
 
-def vote_bar(v: dict, size: int, label: str) -> str:
+def vote_bar(v: dict, size: int) -> str:
     s = v["sumy"]
     segs = "".join(
         f'<span class="seg seg-{o}" style="width:{s[o] / size * 100:.4f}%"></span>' for o in OPTIONS if s[o]
     )
     aria = ", ".join(f"{LABEL[o]}: {s[o]}" for o in OPTIONS)
-    legend = "".join(
-        f'<li><span class="key seg-{o}"></span>{LABEL[o]} <b>{s[o]}</b></li>' for o in OPTIONS
-    )
-    return (f'<div class="bar" role="img" aria-label="{e(label)}. {e(aria)}">{segs}</div>'
-            f'<ul class="legend">{legend}</ul>')
+    return f'<div class="bar" role="img" aria-label="Wynik głosowania. {e(aria)}">{segs}</div>'
 
 
-def club_table(v: dict, clubs: list[dict]) -> str:
-    """Zwięzła lista klubów (alfabetycznie). Pokazujemy tylko opcje z co najmniej jednym głosem, dla każdego klubu tak samo."""
+def legend_html() -> str:
+    items = "".join(f'<li><span class="key seg-{o}"></span>{LABEL[o]}</li>' for o in OPTIONS)
+    return f'<ul class="legend">{items}</ul>'
+
+
+def vote_sentence(v: dict, size: int) -> str:
+    """Zdanie o wyniku, budowane według stałej reguły (ta sama dla każdej uchwały)."""
+    s = v["sumy"]
+    parts = [f"Za: {s['za']} z {size} radnych",
+             "Przeciw: nikt" if s["przeciw"] == 0 else f"Przeciw: {s['przeciw']}"]
+    for o in ("wstrzymal_sie", "brak_glosu", "nieobecni"):
+        if s[o]:
+            parts.append(f"{LABEL[o]}: {s[o]}")
+    return "<b>Przyjęta.</b> " + " · ".join(parts)
+
+
+def club_lines(v: dict, clubs: list[dict]) -> str:
+    """Jak głosowały kluby (alfabetycznie, dla każdego klubu tak samo)."""
     vote_of = {cid: o for o in OPTIONS for cid in v["imiennie"][o]}
     rows = []
     for club in sorted(clubs, key=lambda c: c["nazwa"]):
         counts = {o: 0 for o in OPTIONS}
         for m in club["czlonkowie"]:
             counts[vote_of[m["id"]]] += 1
-        parts = " · ".join(f"{LABEL[o]} {counts[o]}" for o in OPTIONS if counts[o])
-        rows.append(f"<li><b>{e(club['nazwa'])}</b> <small>({len(club['czlonkowie'])} os.)</small>: {parts}</li>")
-    return f'<h4>Według klubów</h4><ul class="clubs">{"".join(rows)}</ul>'
+        parts = ", ".join(f"{LABEL_LOW[o]} {counts[o]}" for o in OPTIONS if counts[o])
+        rows.append(f"<li><b>{e(club['nazwa'])}</b>: {parts}</li>")
+    return f'<ul class="clubs">{"".join(rows)}</ul>'
 
 
 def names_list(v: dict, people: dict, up: str = "") -> str:
@@ -164,66 +178,108 @@ def wallet_html(cdm: dict, doc_urls: dict[str, str]) -> str:
 </section>"""
 
 
+def dup_note(r: dict, opisy: dict) -> str:
+    """Gdy kilka uchwał ma ten sam nagłówek, dopisujemy krótki numer, żeby je odróżnić."""
+    head = opisy["uchwaly"][r["numer"]]["naglowek"]["tekst"]
+    same = sum(1 for x in opisy["uchwaly"].values() if x.get("naglowek", {}).get("tekst") == head)
+    return f' <small class="nr">(uchwała nr {e(r["numer"])})</small>' if same > 1 else ""
+
+
+def _src(url: str, quotes: list[str]) -> str:
+    return (f'<a class="src" href="{e(url)}" title="Cytaty w źródle: {e(" | ".join(quotes))}">źródło</a>')
+
+
 def resolution_card(r: dict, d: dict, opisy: dict, people: dict, wallet: str | None) -> str:
     v = r["glosowanie"]
     size = len(d["radni"])
     desc = description_for(opisy, r)
     text_url = r["tresc"][0]["pdf_url"] if r["tresc"] else None
+    head = desc["naglowek"]
+    head_src = _src(text_url or v["pdf_url"], head["cytaty"]) if text_url else ""
+    parts = [f'<h3 class="head">{e(head["tekst"])}{dup_note(r, opisy)} {head_src}</h3>']
     if desc["brak"]:
-        desc_html = f'<p class="nodesc"><b>Brak opisu.</b> {e(desc["powod"])}</p>'
+        parts.append('<p class="nodesc">Treści tej uchwały nie ma w BIP, jest tylko wynik głosowania.</p>')
     else:
-        sents = []
-        for z in desc["zdania"]:
-            sents.append(f'{e(z["tekst"])} <a class="src" href="{e(text_url)}" title="Cytaty w źródle: '
-                         f'{e(" | ".join(z["cytaty"]))}">źródło</a>')
-        desc_html = f'<p class="desc">{" ".join(sents)}</p>'
+        k = desc["kogo_dotyczy"]
+        parts.append(f'<p class="who"><b>Kogo dotyczy:</b> {e(k["tekst"])} {_src(text_url, k["cytaty"])}</p>')
+        sents = " ".join(f'{e(z["tekst"])} {_src(text_url, z["cytaty"])}' for z in desc["zdania"])
+        parts.append(f'<p class="desc">{sents}</p>')
+        if desc.get("kontekst"):
+            c = desc["kontekst"]
+            parts.append(f'<p class="ctx"><b>Warto wiedzieć:</b> {e(c["tekst"])} {_src(text_url, c["cytaty"])}</p>')
     zg = is_unanimous(v)
-    point = f" · pkt {e(r['punkt_porzadku'])} porządku obrad" if r.get("punkt_porzadku") else " · spoza opublikowanego porządku obrad"
+    clubs = "" if zg else f'<p class="small">Jak głosowały kluby:</p>{club_lines(v, d["kluby"])}'
+    parts.append(f"""<div class="vote">{vote_bar(v, size)}
+<p class="vs">{vote_sentence(v, size)} <a class="src" href="{e(v['pdf_url'])}">źródło</a></p>
+{clubs}</div>""")
+    if wallet:
+        parts.append(wallet)
+    point = f"pkt {e(r['punkt_porzadku'])} porządku obrad" if r.get("punkt_porzadku") else "spoza opublikowanego porządku obrad"
     links = [f'<a href="{e(v["pdf_url"])}">Wyniki głosowania (PDF)</a>']
     if text_url:
         links.insert(0, f'<a href="{e(text_url)}">Treść uchwały (PDF)</a>')
     if r.get("pdf_projektu"):
         links.append(f'<a href="{e(r["pdf_projektu"])}">Projekt uchwały (PDF)</a>')
+    parts.append(f"""<details><summary>Kto jak głosował</summary>{names_list(v, people)}</details>
+<details><summary>Dokumenty i oficjalny tytuł</summary>
+<p class="small">Uchwała nr {e(r['numer'])} · {point} · głosowanie {pl_short(v['data_czas'])}, godz. {v['data_czas'][11:16]}</p>
+<p class="small">Oficjalny tytuł: {e(r['tytul'])}</p>
+<p class="links">{' · '.join(links)}</p></details>""")
     anchor = r["numer"].replace("/", "-")
-    return f"""<article class="card" id="{anchor}" data-zgodna="{1 if zg else 0}">
-<p class="meta">Uchwała nr {e(r['numer'])}{point}</p>
-<h2>{e(r['tytul'])}</h2>
-{desc_html}
-<p class="tag">{'Zgodne: nikt nie był przeciw ani się nie wstrzymał' if zg else 'Sporne: były głosy przeciw lub wstrzymujące się'}</p>
-{vote_bar(v, size, 'Wynik głosowania')}
-<p class="when">Głosowanie: {pl_short(v['data_czas'])}, godz. {v['data_czas'][11:16]} · <a href="{e(v['pdf_url'])}">źródło liczb</a></p>
-{wallet or ''}
-<details><summary>Jak głosowali radni</summary>
-{club_table(v, d['kluby'])}
-{names_list(v, people)}
-</details>
-<p class="links">{' · '.join(links)}</p>
-</article>"""
+    return f'<article class="card" id="{anchor}" data-zgodna="{1 if zg else 0}">\n' + "\n".join(parts) + "\n</article>"
 
 
-def councillor_page(c: dict, d: dict) -> str:
-    rows, counts = [], {o: 0 for o in OPTIONS}
+def theme_sections(d: dict, opisy: dict, people: dict, wallets: dict) -> tuple[str, str]:
+    """Uchwały pogrupowane w stałe tematy (zawsze ta sama kolejność); w temacie według numeru."""
+    by_theme: dict[str, list] = {}
+    for r in d["uchwaly"]:
+        by_theme.setdefault(opisy["uchwaly"][r["numer"]]["temat"], []).append(r)
+    texts_url = {r["numer"]: r["tresc"][0]["pdf_url"] for r in d["uchwaly"] if r["tresc"]}
+    sections, toc = [], []
+    for t in opisy["tematy"]:
+        items = sorted(by_theme.get(t["id"], []), key=lambda r: int(r["numer"].split("/")[1]))
+        if not items:
+            continue
+        intro = ""
+        if t.get("wstep"):
+            w = t["wstep"]
+            intro = f'<p class="intro">{e(w["tekst"])} {_src(texts_url[t["wstep_zrodlo"]], w["cytaty"])}</p>'
+        elif t.get("uwaga"):
+            intro = f'<p class="intro">{e(t["uwaga"])}</p>'
+        cards = "\n".join(resolution_card(r, d, opisy, people, wallets.get(r["numer"])) for r in items)
+        sections.append(f'<section class="theme" id="t-{t["id"]}"><h2>{e(t["nazwa"])} <small>({len(items)})</small></h2>\n{intro}\n{cards}</section>')
+        toc.append(f'<li><a href="#t-{t["id"]}">{e(t["nazwa"])}</a> <small>({len(items)})</small></li>')
+    return "\n".join(sections), f'<ul class="toc">{"".join(toc)}</ul>'
+
+
+def councillor_page(c: dict, d: dict, opisy: dict) -> str:
+    groups = {o: [] for o in OPTIONS}
     for r in d["uchwaly"]:
         v = r["glosowanie"]
         opt = next(o for o in OPTIONS if c["id"] in v["imiennie"][o])
-        counts[opt] += 1
         anchor = r["numer"].replace("/", "-")
-        rows.append(f'<tr><td><a href="../index.html#{anchor}">{e(r["numer"])}</a></td>'
-                    f'<td>{e(r["tytul"])}</td><td class="v v-{opt}">{LABEL_ONE[opt]}</td></tr>')
-    summary = "".join(f"<li>{LABEL[o]}: <b>{counts[o]}</b></li>" for o in OPTIONS)
+        head = opisy["uchwaly"][r["numer"]]["naglowek"]["tekst"]
+        groups[opt].append(f'<li><a href="../index.html#{anchor}">{e(head)}</a>{dup_note(r, opisy)}</li>')
     s = d["sesja"]
+    n = len(d["uchwaly"])
     club_src = d["meta"]["zrodla"]["kluby"]
+    summary = "".join(f"<li>{LABEL_ONE[o]}: <b>{len(groups[o])}</b></li>" for o in OPTIONS)
+    lists = []
+    for o in ("przeciw", "wstrzymal_sie", "brak_glosu", "nieobecni"):
+        if groups[o]:
+            lists.append(f'<h2>{LABEL_ONE[o]} ({len(groups[o])})</h2><ul class="plain">{"".join(groups[o])}</ul>')
+    if groups["za"]:
+        lists.append(f'<details><summary>{LABEL_ONE["za"]} ({len(groups["za"])})</summary><ul class="plain">{"".join(groups["za"])}</ul></details>')
     body = f"""<section class="person">
 <p class="meta">Radny / radna Rady Miasta Gdyni, kadencja {e(d['meta']['kadencja'])}</p>
 <h1>{e(c['imie_nazwisko'])}</h1>
 {f'<p>{e(c["funkcja"])}</p>' if c.get('funkcja') else ''}
 <p>Klub: <b>{e(c['klub'])}</b> <small>(stan na {e(club_src['bip_aktualizacja'][:10])} wg <a href="{e(club_src['url_strony'])}">BIP</a>)</small></p>
-<p><a href="{e(c['bip_url'])}">Profil w BIP</a></p>
-<h2>Głosowania na sesji {e(s['numer'])} ({pl_date(s['data'])})</h2>
+<p>Na sesji {pl_date(s['data'])} rada głosowała nad {n} {plural(n, 'uchwałą', 'uchwałami', 'uchwałami')}.</p>
 <ul class="counts">{summary}</ul>
-<div class="scroll"><table class="votes"><thead><tr><th scope=col>Uchwała</th><th scope=col>W sprawie</th><th scope=col>Głos</th></tr></thead>
-<tbody>{''.join(rows)}</tbody></table></div>
-<p class="note">Źródło: PDF „głosowanie” przy każdej uchwale w BIP. Pokazujemy tylko publiczną działalność radnych.</p>
+{''.join(lists)}
+<p class="note">Źródło: PDF „głosowanie” przy każdej uchwale w BIP. Pokazujemy tylko publiczną działalność radnych.
+<a href="{e(c['bip_url'])}">Profil w BIP</a>.</p>
 </section>"""
     return page(f"{c['imie_nazwisko']} – głosowania", body, depth=1,
                 description=f"Jak {c['imie_nazwisko']} głosował(a) na sesji Rady Miasta Gdyni {pl_date(s['data'])}")
@@ -293,34 +349,36 @@ def build_site(city: str, cache: Path, out: Path) -> None:
     data_date_to = pl_short(max(fetched))
     date_txt = data_date if data_date == data_date_to else f"{data_date}–{data_date_to}"
 
-    cards = "\n".join(resolution_card(r, d, opisy, people, wallets.get(r["numer"])) for r in res)
+    sections, toc = theme_sections(d, opisy, people, wallets)
     missing = [a for a in s["porzadek_projekty"] if not a["uchwala"]]
     missing_html = ""
     if missing:
-        items = "".join(f'<li>pkt {e(a["punkt"])}: {e(a["tytul_projektu"])} – <a href="{e(a["pdf_projektu"])}">projekt (PDF)</a></li>'
+        items = "".join(f'<li>{e(a["tytul_projektu"])} – <a href="{e(a["pdf_projektu"])}">projekt (PDF)</a></li>'
                         for a in missing)
-        missing_html = f"""<section class="missing"><h2>Projekty z porządku obrad bez uchwały w BIP</h2>
-<p>Te projekty były w <a href="{e(s['url'])}">porządku obrad</a>, ale w BIP nie ma uchwały z tej sesji o tym przedmiocie.
-BIP nie podaje, co się z nimi stało (np. czy zdjęto je z porządku obrad, czy je odrzucono).</p><ul>{items}</ul></section>"""
+        missing_html = f"""<section class="missing"><h2>Czego nie wiemy</h2>
+<p>Te projekty były w <a href="{e(s['url'])}">planie sesji</a>, ale w BIP nie ma z nich uchwały.
+BIP nie podaje, co się z nimi stało (np. czy zdjęto je z planu sesji, czy rada je odrzuciła).</p><ul>{items}</ul>
+<p>BIP nie publikuje też głosowań nad poprawkami do uchwał.</p></section>"""
 
     body = f"""<section class="session">
-<p class="meta">{e(d['meta']['organ'])} · kadencja {e(d['meta']['kadencja'])}</p>
-<h1>{e(s['numer'])} sesja, {pl_date(s['data'])}</h1>
-<p>Na tej sesji rada podjęła <b>{len(res)}</b> {plural(len(res), 'uchwałę', 'uchwały', 'uchwał')}. Poniżej każda decyzja: co zmienia (prostym językiem), jak głosowali radni i gdzie jest źródło.</p>
-<p class="small">Dane z BIP pobrane: {date_txt}. Źródła: <a href="{e(s['url'])}">porządek obrad</a>,
-<a href="{e(d['meta']['zrodla']['uchwaly']['url'])}">lista uchwał (API BIP)</a>. <a href="o-danych.html">Jak to sprawdzamy</a>.</p>
+<p class="meta">{e(d['meta']['organ'])}</p>
+<h1>Co zdecydowała rada {pl_date(s['data'])}</h1>
+<p>Na tej sesji rada podjęła <b>{len(res)}</b> {plural(len(res), 'uchwałę', 'uchwały', 'uchwał')}. Przy każdej: co zmienia, kogo dotyczy i jak głosowali radni. Każde zdanie ma link do źródła.</p>
+<nav aria-label="Tematy"><h2 class="small-h">W skrócie</h2>{toc}</nav>
+<details class="howto"><summary>Jak czytać pasek głosowania</summary>{legend_html()}
+<p class="small">„Nie głosowali” to osoby oznaczone w protokole głosowania jako „brak głosu”. „Nieobecni” to osoby, których nie było na głosowaniu.</p></details>
+<p class="small">Dane z BIP: {date_txt}. <a href="o-danych.html">Skąd są dane i jak je sprawdzamy</a>.</p>
 </section>
 <div class="filter" hidden>
 <p id="f-label">Pokaż:</p>
 <div role="group" aria-labelledby="f-label">
 <button type="button" data-f="all" aria-pressed="true">Wszystkie ({len(res)})</button>
-<button type="button" data-f="1" aria-pressed="false">Zgodne ({n_zg})</button>
-<button type="button" data-f="0" aria-pressed="false">Sporne ({len(res) - n_zg})</button>
+<button type="button" data-f="1" aria-pressed="false">Bez sprzeciwu ({n_zg})</button>
+<button type="button" data-f="0" aria-pressed="false">Z głosami przeciw lub wstrzymującymi ({len(res) - n_zg})</button>
 </div>
-<p class="small">Zgodne: nikt nie głosował przeciw ani się nie wstrzymał. Sporne: co najmniej jeden głos przeciw lub wstrzymujący się. Ta sama reguła dla każdej uchwały i każdego klubu.</p>
 </div>
 <p class="small" id="f-count" aria-live="polite"></p>
-{cards}
+{sections}
 {missing_html}"""
     (out / "index.html").write_text(
         page(f"{s['numer']} sesja Rady Miasta Gdyni – Co robi władza?", body,
@@ -328,7 +386,7 @@ BIP nie podaje, co się z nimi stało (np. czy zdjęto je z porządku obrad, czy
         "utf-8")
 
     for c in d["radni"]:
-        (out / "radni" / f"{c['id']}.html").write_text(councillor_page(c, d), "utf-8")
+        (out / "radni" / f"{c['id']}.html").write_text(councillor_page(c, d, opisy), "utf-8")
     rows = "".join(
         f'<li><a href="{c["id"]}.html">{e(c["imie_nazwisko"])}</a> <small>– {e(c["klub"])}'
         f'{", " + e(c["funkcja"]) if c.get("funkcja") else ""}</small></li>'
@@ -357,14 +415,15 @@ Lista radnych: <a href="https://bip.um.gdynia.pl/radni-ix-kadencji-2024-2029,917
 <ul>{checks}</ul>
 <p>Wynik: {e(d['sprawdzenia']['wynik'])} ({d['sprawdzenia']['sprawdzono_glosowan']} głosowań, {d['sprawdzenia']['sprawdzono_radnych']} radnych).</p>
 <h2>Opisy „po ludzku”</h2>
-<p>Opisy mają 1–2 zdania i powstają tylko z treści uchwały i jej uzasadnienia. {e(opisy['metoda'])}
+<p>Przy każdej uchwale jest prosty nagłówek, informacja „kogo dotyczy”, opis w 1–2 zdaniach i czasem „warto wiedzieć”. Wszystko powstaje tylko z treści uchwały i jej uzasadnienia. {e(opisy['metoda'])}
 Każde zdanie ma cytaty z PDF uchwały. Program sprawdza, czy każdy cytat naprawdę jest w tekście PDF, i odrzuca słowa oceniające.
-Gdy BIP nie publikuje treści uchwały, piszemy „brak opisu”.</p>
+Gdy BIP nie publikuje treści uchwały (np. skargi i petycje), pokazujemy tylko nagłówek z tytułu w BIP i wynik głosowania.</p>
 <h2>Słowniczek</h2>
 <ul>
 <li><b>Za / Przeciw / Wstrzymali się</b> – tak radni zagłosowali.</li>
-<li><b>Brak głosu</b> i <b>Nieobecni</b> – dwie osobne grupy w PDF z eSesji. PDF nie wyjaśnia różnicy między nimi.</li>
-<li><b>Zgodne</b> – 0 głosów przeciw i 0 wstrzymujących się. <b>Sporne</b> – wszystkie pozostałe.</li>
+<li><b>Nie głosowali</b> – w PDF z eSesji grupa „brak głosu”. <b>Nieobecni</b> – osobna grupa w tym samym PDF. PDF nie wyjaśnia dokładniej różnicy.</li>
+<li><b>Bez sprzeciwu</b> – 0 głosów przeciw i 0 wstrzymujących się. Pozostałe to uchwały z głosami przeciw lub wstrzymującymi.</li>
+<li><b>Tematy</b> – uchwały są zawsze w tych samych grupach i w tej samej kolejności, a w grupie według numeru uchwały.</li>
 </ul>
 <h2>Dane osobowe</h2>
 <p>Pokazujemy tylko publiczną działalność radnych: imię i nazwisko, funkcję w radzie, klub i głosowania. Osoby prywatne w tytułach uchwał BIP oznacza jako „XX”; zostawiamy to bez zmian.</p>
