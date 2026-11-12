@@ -1,0 +1,5 @@
+# Surowe odpowiedzi serwerów (HTML/JSON/PDF), pobierane ponownie poleceniem `pobierz`
+/cache/
+__pycache__/
+*.pyc
+.venv/

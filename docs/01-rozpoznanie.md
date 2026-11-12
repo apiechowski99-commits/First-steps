@@ -1,5 +1,7 @@
 # Krok 1: rozpoznanie źródeł (Rada Miasta Gdyni)
 
+Projekt: **Co robi władza?** (corobiwladza.pl; robocza nazwa na początku: „Jaki stan?”).
+
 Stan na: 12.11.2026. Wszystkie zapytania szły z identyfikatorem
 `JakiStan-prototyp/0.1 (badanie, niekomercyjne)`, z odstępem ≥ 1 s
 (wyjątek: 4 wczytania BIP w przeglądarce bez interfejsu, opisane niżej).
@@ -164,19 +166,16 @@ PDF ma kolejność „imię nazwisko”, BIP „nazwisko imię”. Nazwiska w PD
 Surowe PDF trzymamy w lokalnym cache (poza gitem, bo są za duże).
 W repo zostaje JSON wynikowy z sumami kontrolnymi plików (SHA-256).
 
-## 5. Decyzje do podjęcia przed pisaniem kodu
+## 5. Decyzje (podjęte 12.11.2026)
 
-1. **Źródło głosowań.** Propozycja: tylko BIP (API + PDF „głosowanie”).
-   Pomijamy gdynia.esesja.pl, dopóki operator nie da zgody albo dostępu.
-   Konsekwencja: prototyp pokazuje głosowania końcowe nad 42 podjętymi
-   uchwałami, bez poprawek i bez projektów odrzuconych.
-   Uzupełnienie na później: zapytać operatora eSesji o dostęp
+1. **Źródło głosowań: tylko BIP** (API + PDF „głosowanie”). gdynia.esesja.pl
+   pomijamy, dopóki operator nie da zgody albo dostępu. Prototyp pokazuje
+   głosowania końcowe nad podjętymi uchwałami, bez poprawek i bez projektów
+   odrzuconych. Uzupełnienie na później: zapytać operatora eSesji o dostęp
    lub eksport albo złożyć wniosek o informację publiczną do Biura Rady
    Miasta o pełny wykaz głosowań sesji.
-2. **Publikacja w gicie.** Repo `First-steps` jest **publiczne**. Czy
-   wypychać commity na gałąź `claude/jaki-stan-gdynia-prototype-85sqgb`
-   na bieżąco, czy traktujesz to jako publikację i mam czekać?
-3. **Definicja „sporne/zgodne”** (do kroku 6). Propozycja reguły, takiej
-   samej dla wszystkich: „zgodne” = żadnego głosu przeciw ani
-   wstrzymującego się; w przeciwnym razie „z głosami przeciw lub
-   wstrzymującymi się”. Bez progów procentowych.
+2. **Push na publiczną gałąź na bieżąco: tak.** Wdrożenia strony na
+   corobiwladza.pl: nie, dopóki nie będzie osobnej zgody.
+3. **„Sporne/zgodne”** (krok 6), jedna reguła dla wszystkich: „zgodne” =
+   żadnego głosu przeciw ani wstrzymującego się; w przeciwnym razie
+   „z głosami przeciw lub wstrzymującymi się”. Bez progów procentowych.
