@@ -20,7 +20,7 @@ _PAREN = re.compile(r"\s*\(([^)]*)\)\s*$")
 
 
 def clean(name: str) -> str:
-    name = unicodedata.normalize("NFC", name).replace(" ", " ")
+    name = unicodedata.normalize("NFC", name).replace("\u00a0", " ")
     name = re.sub(r"\s*-\s*", " - ", name)
     return re.sub(r"\s+", " ", name).strip()
 

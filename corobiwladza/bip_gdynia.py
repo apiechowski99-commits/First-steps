@@ -37,7 +37,7 @@ class BipFormatError(ValueError):
 def strip_tags(s: str) -> str:
     s = re.sub(r"<br\s*/?>", "\n", s, flags=re.I)
     s = re.sub(r"<[^>]+>", "", s)
-    return html.unescape(s).replace(" ", " ")
+    return html.unescape(s).replace("\u00a0", " ")
 
 
 def parse_session_title(title: str) -> dict:

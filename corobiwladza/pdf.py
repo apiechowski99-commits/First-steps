@@ -45,7 +45,7 @@ def info(path: Path) -> dict[str, str]:
 
 def normalize_ws(s: str) -> str:
     """Do porównywania cytatów: łączy przeniesienia wyrazów i zbija białe znaki."""
-    s = s.replace(" ", " ").replace("­", "")
+    s = s.replace("\u00a0", " ").replace("\u00ad", "")
     s = re.sub(r"(\w)-\n(\w)", r"\1\2", s)  # przeniesienie wyrazu na koniec wiersza
     s = re.sub(r"\s+", " ", s)
     return s.strip()
@@ -53,7 +53,7 @@ def normalize_ws(s: str) -> str:
 
 def split_justification(full_text: str) -> tuple[str, str | None]:
     """Dzieli tekst uchwały na treść i uzasadnienie (nagłówek „UZASADNIENIE”)."""
-    m = re.search(r"^\s*UZASADNIENIE\s*$", full_text, flags=re.M)
+    m = re.search(r"^\s*UZASADNIENIE\s*$", full_text, flags=re.M | re.I)
     if not m:
         return full_text, None
     return full_text[: m.start()], full_text[m.end():]
