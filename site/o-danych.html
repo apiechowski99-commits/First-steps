@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O danych – Co robi władza?</title>
+<meta name="description" content="Skąd pochodzą dane i jak je sprawdzamy">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<header class="top"><a class="brand" href="index.html">Co robi władza?</a>
+<nav><a href="index.html">Decyzje</a><a href="radni/index.html">Radni</a><a href="o-danych.html">O danych</a></nav></header>
+<main id="tresc">
+<section class="about">
+<h1>O danych</h1>
+<h2>Skąd są dane</h2>
+<ul>
+<li>Porządek obrad, uchwały, PDF z wynikami głosowań, lista radnych i kluby: <a href="https://bip.um.gdynia.pl">BIP Urzędu Miasta Gdyni</a> (przez publiczne API, z którego korzysta strona BIP).</li>
+<li>PDF „głosowanie” jest wygenerowany przez system eSesja (app.esesja.pl) i opublikowany przez miasto w BIP.</li>
+<li>Portal gdynia.esesja.pl blokuje programy pobierające (zabezpieczenie anty-botowe), więc z niego nie korzystamy.</li>
+</ul>
+<h2>Czego tu nie ma</h2>
+<p>Głosowania końcowe nad uchwałami podjętymi i opublikowanymi w BIP. Bez głosowań nad poprawkami, projektami odrzuconymi i sprawami proceduralnymi. BIP publikuje głosowanie tylko przy podjętej uchwale.</p>
+<h2>Jak sprawdzamy dane</h2>
+<p>Przed zbudowaniem strony program sprawdza dane bez udziału AI. Każda niezgodność zatrzymuje budowę. Sprawdzenia:</p>
+<ul><li>sumy w nagłówku = liczby w sekcjach = liczba nazwisk (dla każdej opcji)</li><li>suma głosów i nieobecnych = liczba radnych</li><li>każde nazwisko na liście radnych BIP (dokładnie lub przez ręczny alias)</li><li>każdy radny dokładnie raz w każdym głosowaniu</li><li>podjęta uchwała: ZA &gt; PRZECIW i kworum (art. 14 u.s.g.)</li><li>data uchwały = data głosowania = data sesji; numer i rok sesji w numerze uchwały</li><li>PDF wygenerowany nie wcześniej niż głosowanie; wpis w BIP nie przed sesją</li><li>numeracja uchwał sesji bez luk i powtórzeń</li><li>dokładnie 1 PDF głosowania na uchwałę, różne pliki i identyfikatory</li><li>lista radnych = ustawowy skład; każdy radny w dokładnie jednym klubie lub wśród niezrzeszonych</li></ul>
+<p>Wynik: wszystkie sprawdzenia przeszły (42 głosowań, 28 radnych).</p>
+<h2>Opisy „po ludzku”</h2>
+<p>Opisy mają 1–2 zdania i powstają tylko z treści uchwały i jej uzasadnienia. Szkic: model językowy Claude (Anthropic) w sesji z 12.11.2026, na podstawie wyłącznie tekstu PDF uchwały. Cytaty sprawdzane automatycznie. Do weryfikacji przez redakcję przed publikacją.
+Każde zdanie ma cytaty z PDF uchwały. Program sprawdza, czy każdy cytat naprawdę jest w tekście PDF, i odrzuca słowa oceniające.
+Gdy BIP nie publikuje treści uchwały, piszemy „brak opisu”.</p>
+<h2>Słowniczek</h2>
+<ul>
+<li><b>Za / Przeciw / Wstrzymali się</b> – tak radni zagłosowali.</li>
+<li><b>Brak głosu</b> i <b>Nieobecni</b> – dwie osobne grupy w PDF z eSesji. PDF nie wyjaśnia różnicy między nimi.</li>
+<li><b>Zgodne</b> – 0 głosów przeciw i 0 wstrzymujących się. <b>Sporne</b> – wszystkie pozostałe.</li>
+</ul>
+<h2>Dane osobowe</h2>
+<p>Pokazujemy tylko publiczną działalność radnych: imię i nazwisko, funkcję w radzie, klub i głosowania. Osoby prywatne w tytułach uchwał BIP oznacza jako „XX”; zostawiamy to bez zmian.</p>
+<h2>Pobieranie</h2>
+<p>Program pobiera najwyżej 1 plik na sekundę i przedstawia się jako CoRobiWladza (corobiwladza.pl). Ostatnie zbudowanie danych: 2026-11-12
+(0 zapytań do sieci, 80 z pamięci podręcznej).</p>
+<p>Dane w formacie JSON i kod programu: repozytorium projektu.</p>
+</section>
+</main>
+<footer class="foot">
+<p><strong>Co robi władza?</strong> (corobiwladza.pl) to niezależny prototyp. Nie jest to serwis Urzędu Miasta Gdyni.
+Wszystkie dane pochodzą z <a href="https://bip.um.gdynia.pl">Biuletynu Informacji Publicznej UM Gdyni</a>.</p>
+</footer>
+<script src="filtr.js" defer></script>
+</body>
+</html>
