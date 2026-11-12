@@ -93,14 +93,23 @@ Bez AI i bez heurystyk. Każde z nich ma test, który psuje dane i oczekuje bł�
 
 ### Opisy „po ludzku” (krok 4)
 
-1–2 zdania na uchwałę, tylko na podstawie treści uchwały i uzasadnienia.
+Każda uchwała ma: prosty nagłówek (do 100 znaków), „kogo dotyczy”, opis
+w 1–2 zdaniach i czasem „warto wiedzieć” (kontekst z uzasadnienia).
+Uchwały są pogrupowane w stałe tematy (zawsze ta sama kolejność, w temacie
+według numeru). Wynik głosowania jest podany zdaniem („Przyjęta. Za: 12 z 28
+radnych · Przeciw: nikt …”), a przy uchwałach z głosami przeciw lub
+wstrzymującymi także rozkład głosów w każdym klubie. Wszystko tylko na
+podstawie treści uchwały i uzasadnienia.
 Szkice napisał model językowy Claude w sesji 12.11.2026. **Przed publikacją
 redakcja powinna je przeczytać.** Program pilnuje, żeby:
 
 - każde zdanie miało cytaty i każdy cytat był dosłownie w tekście PDF uchwały,
 - opis miał 1–2 zdania i nie zawierał słów oceniających z listy
   (`STOP_WORDS` w `descriptions.py`),
-- uchwała bez treści w BIP (12 skarg i petycji) dostała „brak opisu”.
+- każde z tych pól (nagłówek, „kogo dotyczy”, kontekst, wstęp tematu) przechodziło
+  te same sprawdzenia co opis,
+- uchwała bez treści w BIP (12 skarg i petycji) miała tylko nagłówek z tytułu
+  w BIP i żadnego opisu.
 
 ### „A co dla mnie?” (krok 5)
 
