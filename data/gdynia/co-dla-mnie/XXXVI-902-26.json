@@ -1,0 +1,55 @@
+{
+ "_opis": "„A co dla mnie?” dla uchwały XXXVI/902/26 (podatek od nieruchomości). Stawki są cytatami z uchwał, przykłady to wyłącznie mnożenie: powierzchnia × stawka. Polecenie `strona` sprawdza każdy cytat w tekście PDF.",
+ "uchwala": "XXXVI/902/26",
+ "tytul": "Podatek od nieruchomości: ile za 1 m² w 2026 i 2027 roku",
+ "lata": ["2026", "2027"],
+ "dokumenty": {
+  "uchwala_2027": {"opis": "Uchwała nr XXXVI/902/26 z 28.10.2026 (stawki od 1.01.2027)", "zrodlo": "tresc_uchwaly_sesji"},
+  "uchwala_2026": {"opis": "Uchwała nr XXIII/558/25 z 22.10.2025 (stawki od 1.01.2026)",
+                   "url": "https://legacy.um.gdynia.pl/module/Files/controller/Default/action/downloadFile/hash/925fa50598bd94475c07c500e4e8a1c4.pdf",
+                   "bip": "https://bip.um.gdynia.pl/wyszukiwarka-uchwal-rady-miasta-od-2000-roku,7485/wyszukiwarka-uchwal,504923"},
+  "projekt_2027": {"opis": "Projekt uchwały z porządku obrad XXXVI sesji (pkt 5.4), przed poprawką", "zrodlo": "projekt_uchwaly_sesji"}
+ },
+ "stawki": [
+  {"id": "mieszkalne", "nazwa": "budynek mieszkalny (mieszkanie, dom)", "jednostka": "zł za 1 m² powierzchni użytkowej, rocznie",
+   "wartosci": {
+    "2026": {"wartosc": "1,20", "dokument": "uchwala_2026", "cytat": "mieszkalnych - 1,20 zł od 1 m2 powierzchni użytkowej"},
+    "2027": {"wartosc": "1,24", "dokument": "uchwala_2027", "cytat": "mieszkalnych - 1,24 zł od 1 m2 powierzchni użytkowej"}}},
+  {"id": "grunt_pozostaly", "nazwa": "grunt „pozostały” (np. działka pod domem, ogród)", "jednostka": "zł za 1 m² powierzchni, rocznie",
+   "wartosci": {
+    "2026": {"wartosc": "0,77", "dokument": "uchwala_2026", "cytat": "pozostałych, w tym zajętych na prowadzenie odpłatnej statutowej działalności pożytku publicznego przez organizacje pożytku publicznego - 0,77 zł od 1 m2 powierzchni"},
+    "2027": {"wartosc": "0,80", "dokument": "uchwala_2027", "cytat": "pozostałych, w tym zajętych na prowadzenie odpłatnej statutowej działalności pożytku publicznego przez organizacje pożytku publicznego - 0,80 zł od 1 m2 powierzchni"}}},
+  {"id": "budynek_firmy", "nazwa": "budynek lub lokal, w którym działa firma", "jednostka": "zł za 1 m² powierzchni użytkowej, rocznie",
+   "wartosci": {
+    "2026": {"wartosc": "35,53", "dokument": "uchwala_2026", "cytat": "zajętych na prowadzenie działalności gospodarczej - 35,53 zł od 1 m2 powierzchni użytkowej"},
+    "2027": {"wartosc": "36,49", "dokument": "uchwala_2027", "cytat": "zajętych na prowadzenie działalności gospodarczej - 36,49 zł od 1 m2 powierzchni użytkowej"}}},
+  {"id": "grunt_firmy", "nazwa": "grunt związany z działalnością firmy", "jednostka": "zł za 1 m² powierzchni, rocznie",
+   "wartosci": {
+    "2026": {"wartosc": "1,45", "dokument": "uchwala_2026", "cytat": "w ewidencji gruntów i budynków - 1,45 zł od 1 m2 powierzchni"},
+    "2027": {"wartosc": "1,49", "dokument": "uchwala_2027", "cytat": "w ewidencji gruntów i budynków - 1,49 zł od 1 m2 powierzchni"}}}
+ ],
+ "grupy": [
+  {"kto": "Właściciel mieszkania",
+   "przyklad": {"tytul": "mieszkanie o powierzchni 50 m²", "skladniki": [
+     {"opis": "mieszkanie", "m2": 50, "stawka": "mieszkalne"}]},
+   "uwaga": "Liczymy tylko powierzchnię mieszkania. Grunt pod budynkiem ma osobną stawkę (patrz tabela)."},
+  {"kto": "Właściciel domu z ogrodem",
+   "przyklad": {"tytul": "dom 120 m² na działce 600 m²", "skladniki": [
+     {"opis": "dom", "m2": 120, "stawka": "mieszkalne"},
+     {"opis": "działka", "m2": 600, "stawka": "grunt_pozostaly"}]},
+   "uwaga": "Przykład zakłada, że działka nie jest związana z działalnością firmy."},
+  {"kto": "Osoba prowadząca firmę w lokalu",
+   "przyklad": {"tytul": "lokal usługowy 40 m²", "skladniki": [
+     {"opis": "lokal firmy", "m2": 40, "stawka": "budynek_firmy"}]},
+   "uwaga": "Stawka dla budynków i lokali zajętych na działalność gospodarczą, także w budynku mieszkalnym."}
+ ],
+ "fakty": [
+  {"tekst": "Nowe stawki obowiązują od 1 stycznia 2027 r.",
+   "cytaty": [{"dokument": "uchwala_2027", "cytat": "Uchwała wchodzi w życie z dniem 1 stycznia 2027 r."}]},
+  {"tekst": "W projekcie uchwały stawka za 1 m² mieszkania wynosiła 1,29 zł. Rada uchwaliła 1,24 zł. Głosowania nad tą poprawką BIP nie publikuje.",
+   "cytaty": [{"dokument": "projekt_2027", "cytat": "mieszkalnych - 1,29 zł od 1 m2 powierzchni użytkowej"},
+              {"dokument": "uchwala_2027", "cytat": "mieszkalnych - 1,24 zł od 1 m2 powierzchni użytkowej"}]},
+  {"tekst": "Według uzasadnienia miasto szacuje wpływy z tego podatku w 2027 roku na 250 279 000 zł.",
+   "cytaty": [{"dokument": "uchwala_2027", "cytat": "Szacuje się, że dochód z tego tytułu w roku 2027 wyniesie 250 279 000 zł."}]}
+ ]
+}
