@@ -1,0 +1,187 @@
+{
+ "_opis": "Opisy „po ludzku” uchwał XXXVI sesji Rady Miasta Gdyni (28.10.2026). Każde zdanie ma cytaty z PDF treści uchwały w BIP (treść lub uzasadnienie). Polecenie `strona` sprawdza, czy każdy cytat występuje w tekście PDF; brak cytatu to błąd. Liczby z dopiskiem „ok.” są zaokrągleniem kwoty z cytatu.",
+ "metoda": "Szkic: model językowy Claude (Anthropic) w sesji z 12.11.2026, na podstawie wyłącznie tekstu PDF uchwały. Cytaty sprawdzane automatycznie. Do weryfikacji przez redakcję przed publikacją.",
+ "sesja": "2026-10-28_XXXVI",
+ "uchwaly": {
+  "XXXVI/899/26": {"zdania": [
+   {"tekst": "Rada nadała skwerowi przy ulicach Władysława IV i Wójta Radtkego w Śródmieściu nazwę Skwer Elżbiety Skwiercz.",
+    "cytaty": ["Skwerowi położonemu przy ulicy Władysława IV i Wójta Radtkego na terenie dzielnicy Śródmieście", "nadaje się nazwę Skwer Elżbiety Skwiercz"]},
+   {"tekst": "Według uzasadnienia Elżbieta Skwiercz (1868–1935) razem z matką przekazała i sprzedała ziemię, na której powstały pierwsza kaplica i pierwszy szpital w Gdyni, a o upamiętnienie poprosili jej krewni.",
+    "cytaty": ["Elżbieta Skwiercz (1868–1935)", "W 1910 roku Elżbieta wraz z matką przekazały, a następnie sprzedały 15 hektarów ziemi", "Inicjatywa ta umożliwiła powstanie pierwszej kaplicy oraz pierwszego gdyńskiego szpitala", "Wniosek o upamiętnienie złożyli krewni Elżbiety Skwiercz."]}
+  ]},
+  "XXXVI/900/26": {"zdania": [
+   {"tekst": "Rada zmieniła budżet Gdyni na 2026 rok: według uzasadnienia plan dochodów wzrósł o 1 371 160 zł, a plan wydatków zmalał o 19 928 533 zł.",
+    "cytaty": ["ZMIANY W DOCHODACH - zwiększenie o 1.371.160 zł", "ZMIANY W WYDATKACH - zmniejszenie o 19.928.533 zł"]},
+   {"tekst": "Po zmianie plan dochodów to ok. 2,72 mld zł, a plan wydatków ok. 3,11 mld zł; różnica, czyli deficyt, to ok. 390 mln zł.",
+    "cytaty": ["na kwotę 2.715.114.607,99 zł", "na kwotę 3.105.275.066,51 zł", "planowany deficyt budżetu w kwocie 390.160.458,52 zł"]}
+  ]},
+  "XXXVI/901/26": {"zdania": [
+   {"tekst": "Rada zmieniła Wieloletnią Prognozę Finansową Gdyni na lata 2026–2045.",
+    "cytaty": ["zmieniająca uchwałę w sprawie Wieloletniej Prognozy Finansowej dla Miasta Gdyni na lata 2026 – 2045"]},
+   {"tekst": "Zmieniono w niej m.in. dochody, wydatki i przychody na 2026 rok, żeby zgadzały się ze zmienionym budżetem miasta.",
+    "cytaty": ["wielkości dochodów, wydatków i przychodów planowanych na 2026 rok w związku z dokonanymi zmianami w budżecie w celu doprowadzenia do zgodności z kwotami zmienionego budżetu"]}
+  ]},
+  "XXXVI/902/26": {"zdania": [
+   {"tekst": "Rada ustaliła stawki podatku od nieruchomości od 1 stycznia 2027 r., np. 1,24 zł rocznie za 1 m² mieszkania i 36,49 zł za 1 m² budynku, w którym działa firma.",
+    "cytaty": ["mieszkalnych - 1,24 zł od 1 m2 powierzchni użytkowej", "związanych z prowadzeniem działalności gospodarczej oraz od budynków mieszkalnych lub ich części zajętych na prowadzenie działalności gospodarczej - 36,49 zł od 1 m2 powierzchni użytkowej", "Uchwała wchodzi w życie z dniem 1 stycznia 2027 r."]},
+   {"tekst": "Według uzasadnienia stawki co roku rosną o wskaźnik wzrostu cen, który tym razem wyniósł 2,7%.",
+    "cytaty": ["Stawki podatku od nieruchomości ulegają corocznie waloryzacji o wskaźnik cen towarów i usług konsumpcyjnych", "wyniósł 102,7 (wzrost cen o 2,7%)"]}
+  ]},
+  "XXXVI/903/26": {"zdania": [
+   {"tekst": "Aglomeracja to obszar, z którego ścieki są zbierane i przesyłane do oczyszczalni.",
+    "cytaty": ["aglomeracja to obszar na którym zaludnienie lub działalność gospodarcza są wystarczająco skoncentrowane, aby ścieki komunalne były zbierane i przekazywane do oczyszczalni ścieków"]},
+   {"tekst": "Rada zaktualizowała granice aglomeracji Gdynia z oczyszczalnią „Dębogórze”: ma ona 428 077 RLM (tzw. równoważnych mieszkańców) i obejmuje m.in. Gdynię (bez kilku ulic), Rumię, Redę i Wejherowo.",
+    "cytaty": ["zaistniała potrzeba aktualizacji aglomeracji", "o równoważnej liczbie mieszkańców wynoszącej 428 077 RLM, z Grupową Oczyszczalnią Ścieków „Dębogórze”", "Gminę Miasta Gdynia z wyłączeniem rejonu zabudowy ulic: Łosiowa, Jelenia, Sarnia (Wielki Kack)", "Gminę Miasta Wejherowo, Gminę Miasta Reda, Gminę Miasta Rumia"]}
+  ]},
+  "XXXVI/904/26": {"zdania": [
+   {"tekst": "Rada uchwaliła plan miejscowy dla 45,89 ha w Cisowej, w rejonie ulic Morskiej i Chylońskiej.",
+    "cytaty": ["Uchwala się miejscowy plan zagospodarowania przestrzennego części dzielnicy Cisowa w Gdyni, rejon ulic Morskiej i Chylońskiej", "obejmujący obszar o powierzchni 45,89 ha"]},
+   {"tekst": "Plan dzieli ten obszar na 34 tereny i dla każdego ustala, co można tam zbudować, np. domy jednorodzinne, bloki albo budynki usługowe.",
+    "cytaty": ["Ustala się podział obszaru objętego planem na 34 tereny wydzielone liniami rozgraniczającymi", "MN1 – Zabudowa jednorodzinna wolnostojąca", "MW2 – Zabudowa wielorodzinna", "U – Zabudowa usługowa"]}
+  ]},
+  "XXXVI/905/26": {"zdania": [
+   {"tekst": "Rada upoważniła dyrektora Pomorskiego Parku Naukowo-Technologicznego Gdynia do wydawania decyzji i zaświadczeń o pomocy de minimis.",
+    "cytaty": ["Upoważnia się dyrektora Pomorskiego Parku Naukowo-Technologicznego Gdynia", "wydawania decyzji o udzieleniu pomocy de minimis", "wydawania zaświadczeń o wysokości udzielonej pomocy de minimis"]},
+   {"tekst": "Według uzasadnienia nowe upoważnienie nie jest wystawione na konkretną osobę, więc nie trzeba go powtarzać po zmianie dyrektora.",
+    "cytaty": ["Nowe upoważnienie nie ma charakteru imiennego", "ewentualna zmiana na stanowisku dyrektora jednostki nie wpłynie na ważność udzielonego upoważnienia i konieczność jego ponawiania"]}
+  ]},
+  "XXXVI/906/26": {"zdania": [
+   {"tekst": "Rada usunęła Przedszkole nr 51 z listy miejskich placówek, które mogą zbierać własne dochody na osobnym rachunku, bo to przedszkole zlikwidowano 31 sierpnia 2026 r.",
+    "cytaty": ["W związku z likwidacją z dniem 31 sierpnia 2026 r. Przedszkola nr 51 w Gdyni", "zachodzi konieczność aktualizacji wykazu jednostek budżetowych uprawnionych do gromadzenia dochodów na wydzielonym rachunku"]},
+   {"tekst": "Zmiana obowiązuje od 1 września 2026 r.",
+    "cytaty": ["z mocą obowiązującą od 1 września 2026 roku"]}
+  ]},
+  "XXXVI/907/26": {"zdania": [
+   {"tekst": "Rada usunęła zlikwidowane Przedszkole nr 51 z listy placówek obsługiwanych przez Centrum Usług dla Przedszkoli i Szkół w Gdyni.",
+    "cytaty": ["likwidacji, z dniem 31 sierpnia br., Przedszkola nr 51", "zachodzi konieczność dokonania zmian w wykazie jednostek obsługiwanych przez Centrum Usług dla Przedszkoli i Szkół w Gdyni"]},
+   {"tekst": "Zmiana obowiązuje od 1 września 2026 r.",
+    "cytaty": ["z mocą obowiązującą od 1 września 2026 r."]}
+  ]},
+  "XXXVI/908/26": {"zdania": [
+   {"tekst": "Rada ustaliła nowy statut Żłobka „Koniczynka”, bo przy ul. Wiesławy Kwiatkowskiej 23 powstała jego nowa filia.",
+    "cytaty": ["Ustala się statut gminnej jednostki budżetowej Żłobek „Koniczynka”", "W związku z wybudowaniem filii żłobka przy ul. Wiesławy Kwiatkowskiej 23"]},
+   {"tekst": "Według nowego statutu żłobek ma 277 miejsc, w tym 72 w nowej filii, a statut opisuje też zasady pierwszego naboru do tej filii.",
+    "cytaty": ["Żłobek dysponuje 277 miejscami z czego", "w filii żłobka przy ul. Wiesławy Kwiatkowskiej 23 - 72 miejscami", "Zasady pierwszego postępowania rekrutacyjnego do filii żłobka przy ul. Wiesławy Kwiatkowskiej 23"]}
+  ]},
+  "XXXVI/909/26": {"zdania": [
+   {"tekst": "Rada zmniejszyła liczbę miejsc w siedzibie Żłobka „Niezapominajka” przy ul. Wójta Radtkego ze 110 do 95.",
+    "cytaty": ["w siedzibie żłobka przy ul. Wójta Radtkego 23", "Zmniejszeniu ulega liczba miejsc w siedzibie Żłobka Niezapominajka z 110 do poziomu 95 dzieci"]},
+   {"tekst": "Według uzasadnienia powodem są zmiany demograficzne; cały żłobek z dwiema filiami ma teraz 262 miejsca.",
+    "cytaty": ["Ze względu na wyraźne zmiany demograficzne", "Żłobek dysponuje 262 miejscami"]}
+  ]},
+  "XXXVI/910/26": {"zdania": [
+   {"tekst": "Rada na nowo opisała przebieg ulicy Prostokątnej (od ul. Okrężnej, bez przejazdu) jako drogi gminnej i wypisała działki, na których ta droga leży.",
+    "cytaty": ["Ustala się przebieg drogi kategorii gminnej nr 135428G ulicy Prostokątnej w Gdyni na odcinku od ul. Okrężnej do bez przejazdu", "Pas drogowy drogi wymienionej w §1 zlokalizowany jest na działkach gminnych wymienionych w załączniku nr 4"]},
+   {"tekst": "Według uzasadnienia powodem jest modernizacja tej drogi w 2025 r.; poprzednia uchwała z 2017 r. przestaje obowiązywać.",
+    "cytaty": ["W 2025 roku dokonano modernizacji drogi nr 135428G", "Traci moc uchwała nr XXXII/812/17 Rady Miasta Gdyni z dnia 24 maja 2017 r."]}
+  ]},
+  "XXXVI/911/26": {"zdania": [
+   {"tekst": "Rada na nowo opisała przebieg ulicy Zielnej (od ul. Witomińskiej, bez przejazdu) jako drogi gminnej.",
+    "cytaty": ["Ustala się przebieg drogi kategorii gminnej nr 135632G ulicy Zielnej w Gdyni od ul. Witomińskiej do bez przejazdu"]},
+   {"tekst": "Według uzasadnienia w poprzedniej uchwale z 2014 r. nie było numerów działek, na których leży ta droga, a nowa uchwała je dodaje.",
+    "cytaty": ["gdzie nie wymieniono działek leżących w pasie drogowym drogi publicznej", "W niniejszej uchwale dodano numery działek gminnych, na których zlokalizowana jest droga gminna nr 135632G"]}
+  ]},
+  "XXXVI/912/26": {"zdania": [
+   {"tekst": "Rada na nowo opisała przebieg ulicy Sosnowej (od ul. Chwarznieńskiej, bez przejazdu) jako drogi gminnej.",
+    "cytaty": ["Ustala się przebieg drogi kategorii gminnej nr 135505G ulicy Sosnowej w Gdyni od ul. Chwarznieńskiej do bez przejazdu"]},
+   {"tekst": "Według uzasadnienia granice tej drogi zmieniła rozbudowa ulicy Chwarznieńskiej, oddana do użytku w 2025 r.",
+    "cytaty": ["W 2025 roku oddano do użytkowania inwestycję pod nazwą", "Rozbudowa ulicy Chwarznieńskiej w Gdyni - odcinek witomiński", "linie rozgraniczające pasa drogowego m.in. ulicy Sosnowej"]}
+  ]},
+  "XXXVI/913/26": {"zdania": [
+   {"tekst": "Rada na nowo opisała przebieg ulicy Uczniowskiej (od ul. Chwarznieńskiej do ul. Chwarznieńskiej) jako drogi gminnej.",
+    "cytaty": ["Ustala się przebieg drogi kategorii gminnej nr 135576G ulicy Uczniowskiej w Gdyni od ul. Chwarznieńskiej do ul. Chwarznieńskiej"]},
+   {"tekst": "Według uzasadnienia granice tej drogi zmieniła rozbudowa ulicy Chwarznieńskiej, oddana do użytku w 2025 r.",
+    "cytaty": ["W 2025 roku oddano do użytkowania inwestycję pod nazwą", "Rozbudowa ulicy Chwarznieńskiej w Gdyni - odcinek witomiński", "Powyższa decyzja zmieniła linie rozgraniczające pasa drogowego ulicy Uczniowskiej"]}
+  ]},
+  "XXXVI/914/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto przejęło na własność od osób prywatnych działkę o powierzchni 140 m² w Orłowie, która jest częścią ulicy Przemysława.",
+    "cytaty": ["Wyraża się zgodę na nabycie na rzecz Gminy Miasta Gdyni działki nr 2756/2 obr. 0022 Orłowo o pow. 140 m2", "jako własność osób fizycznych", "Przedmiotowa działka stanowi pas drogowy drogi publicznej"]},
+   {"tekst": "Według uzasadnienia chodzi o to, żeby ulicę Przemysława można było zaliczyć do dróg gminnych.",
+    "cytaty": ["aby możliwe było zaliczenie przedmiotowej ulicy do kategorii dróg gminnych"]}
+  ]},
+  "XXXVI/915/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 121 m² miejskiego gruntu przy ul. Architektów, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni, o powierzchni 121 m², położonej w Gdyni przy ul. Architektów", "na czas nieoznaczony na rzecz dotychczasowego dzierżawcy"]},
+   {"tekst": "Według uzasadnienia teren ma służyć jako działka przydomowa.",
+    "cytaty": ["o kontynuację umowy dzierżawy, z przeznaczeniem terenu na działkę przydomową"]}
+  ]},
+  "XXXVI/916/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 25 m² miejskiego gruntu przy ul. Bohaterów Starówki Warszawskiej, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 25m², położonej w Gdyni przy ul. Bohaterów Starówki Warszawskiej", "na czas nieoznaczony na rzecz dotychczasowego Dzierżawcy"]},
+   {"tekst": "Według uzasadnienia na tym terenie jest miejsce na posegregowane odpady (punkt selektywnej zbiórki) z dojściem.",
+    "cytaty": ["z przeznaczeniem na punkt selektywnej zbiórki odpadów wraz z dojściem"]}
+  ]},
+  "XXXVI/917/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 40 m² miejskiego gruntu przy ul. Głogowej, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 40m2, położonej przy ul. Głogowej", "na czas nieoznaczony, na rzecz dotychczasowego dzierżawcy"]},
+   {"tekst": "Według uzasadnienia teren ma służyć jako działka przydomowa.",
+    "cytaty": ["o kontynuację umowy dzierżawy z przeznaczeniem na działkę przydomową"]}
+  ]},
+  "XXXVI/918/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 63 m² miejskiego gruntu przy ul. Jesionowej, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni, o powierzchni 63 m², położonej w Gdyni przy ul. Jesionowej", "na czas nieoznaczony na rzecz dotychczasowego dzierżawcy"]},
+   {"tekst": "Według uzasadnienia teren ma służyć jako zaplecze zakładu ślusarskiego.",
+    "cytaty": ["z przeznaczeniem terenu na zaplecze prowadzonego zakładu ślusarskiego"]}
+  ]},
+  "XXXVI/919/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 30 m² miejskiego gruntu przy ul. Łowickiej, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 30 m², położonej w Gdyni przy ul. Łowickiej", "na czas nieoznaczony na rzecz dotychczasowego Dzierżawcy"]},
+   {"tekst": "Według uzasadnienia na tym terenie są miejsca parkingowe z ładowarkami do samochodów elektrycznych.",
+    "cytaty": ["z przeznaczeniem na miejsca postojowe wraz z infrastrukturą przeznaczone do ładowania samochodów energią elektryczną"]}
+  ]},
+  "XXXVI/920/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 830 m² miejskiego gruntu przy ul. Manganowej, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 830 m², położonej przy ul. Manganowej", "na czas nieoznaczony na rzecz dotychczasowego dzierżawcy"]},
+   {"tekst": "Według uzasadnienia na tym gruncie stoją budynek mieszkalny i garaż, w które zainwestował dzierżawca.",
+    "cytaty": ["właściciela nakładów na budynek mieszkalny i garaż położony na przedmiotowej nieruchomości", "z przeznaczeniem na nieruchomość zabudowaną obiektem mieszkalnym"]}
+  ]},
+  "XXXVI/921/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 142 m² miejskiego gruntu przy ul. Opata Hackiego, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 142 m2, położonej przy ul. Opata Hackiego", "na czas nieoznaczony, na rzecz dotychczasowego dzierżawcy"]},
+   {"tekst": "Według uzasadnienia wspólnota mieszkaniowa ma tam zieleń ozdobną.",
+    "cytaty": ["z przeznaczeniem na zagospodarowanie terenu przez Wspólnotę Mieszkaniową – zieleń ozdobna"]}
+  ]},
+  "XXXVI/922/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowemu dzierżawcy 272 m² miejskiego gruntu przy ul. Spokojnej, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 272 m², położonej w Gdyni przy ul. Spokojnej", "na czas nieoznaczony na rzecz dotychczasowego Dzierżawcy"]},
+   {"tekst": "Według uzasadnienia z terenu przed blokiem korzysta wspólnota mieszkaniowa.",
+    "cytaty": ["z przeznaczeniem na zagospodarowanie terenu przez wspólnotę mieszkaniową celem poprawy funkcjonalności nieruchomości przed budynkiem wielorodzinnym"]}
+  ]},
+  "XXXVI/923/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto bez przetargu dalej wynajmowało (dzierżawiło) dotychczasowym dzierżawcom 32 m² miejskiego gruntu przy ul. Wzgórze Bernadowo, bez ustalonej daty końca umowy.",
+    "cytaty": ["Wyraża się zgodę na odstąpienie od obowiązku przetargowego trybu zawarcia kolejnej umowy dzierżawy", "stanowiącej własność Gminy Miasta Gdyni o powierzchni 32 m², położonej w Gdyni przy ul. Wzgórze Bernadowo", "na czas nieoznaczony na rzecz dotychczasowych Dzierżawców"]},
+   {"tekst": "Według uzasadnienia teren jest działką przydomową.",
+    "cytaty": ["z przeznaczeniem na zagospodarowanie terenu – działkę przydomową"]}
+  ]},
+  "XXXVI/924/26": {"zdania": [
+   {"tekst": "Rada zgodziła się, żeby miasto zamieniło swoje działki przy ul. Kościelnej (razem 69 m²) na działkę o powierzchni 46 m², która należy do osoby prawnej.",
+    "cytaty": ["Wyraża się zgodę na zamianę nieruchomości położonych w Gdyni w rejonie ulicy Kościelnej", "o łącznej pow. 69 m2 na nieruchomość stanowiącą własność osoby prawnej oznaczonej numerem 1122/3 obręb 0022 Orłowo o pow. 46 m2"]},
+   {"tekst": "Według uzasadnienia na działkach miasta są nagrobki cmentarza parafialnego, a na działce, którą dostanie miasto, jest utwardzone dojście do furtki cmentarza i do bramy ogrodów działkowych.",
+    "cytaty": ["Zagospodarowane są nagrobkami z lat 60-tych położonymi na terenie cmentarza parafialnego", "częściowo zabudowana jest utwardzonym dojściem do furtki cmentarza oraz bramy wjazdowej na teren Rodzinnego Ogrodu Działkowego"]}
+  ]},
+  "XXXVI/925/26": {"zdania": [
+   {"tekst": "Rada zmieniła podział pieniędzy z Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych (PFRON) na 2026 rok w czterech pozycjach tabeli zadań.",
+    "cytaty": ["Podział środków PFRON na zadania z zakresu rehabilitacji zawodowej i społecznej", "w zakresie wierszy w tabeli oznaczonych liczbą porządkową: 7, 8, 9, 12"]},
+   {"tekst": "Po zmianie np. na dofinansowanie sprzętu rehabilitacyjnego jest 2 043 705,00 zł, na turnusy rehabilitacyjne 653 725,00 zł, a na wszystkie zadania razem 10 927 130,00 zł.",
+    "cytaty": ["Dofinansowanie zaopatrzenia w sprzęt rehabilitacyjny, przedmioty ortopedyczne i środki pomocnicze – art. 35a, ust. 1, pkt 7, ppkt c §3030 1.881.527,77 2.043.705,00", "turnusach rehabilitacyjnych – art. 35a, ust. 1, pkt 7, ppkt a §3030 774.163,00 653.725,00", "Razem: 10.678.483,15 10.927.130,00", "Wykonanie w 2025 r. Projekt na 2026 r."]}
+  ]},
+  "XXXVI/926/26": {"zdania": [
+   {"tekst": "Rada ustaliła, na jakie zadania dla osób z niepełnosprawnościami można w 2027 roku wydawać pieniądze z PFRON.",
+    "cytaty": ["Określa się zadania z zakresu rehabilitacji zawodowej i społecznej osób z niepełnosprawnościami, które mogą być realizowane ze środków Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych w 2027 roku"]},
+   {"tekst": "Na liście są m.in. dofinansowanie sprzętu rehabilitacyjnego, turnusów rehabilitacyjnych i usuwania barier architektonicznych.",
+    "cytaty": ["Dofinansowanie zaopatrzenia w sprzęt rehabilitacyjny, przedmioty ortopedyczne i środki pomocnicze", "Dofinansowanie uczestnictwa osób niepełnosprawnych i ich opiekunów w turnusach rehabilitacyjnych", "Dofinansowanie likwidacji barier architektonicznych"]}
+  ]},
+  "XXXVI/927/26": {"zdania": [
+   {"tekst": "Rada wyznaczyła Gdyńskie Centrum Informatyki (GCI) do wspólnej obsługi obowiązków związanych z cyberbezpieczeństwem dla kilku miejskich jednostek, m.in. Urzędu Miasta i Zarządu Dróg Miejskich.",
+    "cytaty": ["Wyznacza się GCI jako jednostkę obsługującą w rozumieniu art. 16e ust. 5 ustawy z dnia 5 lipca 2018 r. o krajowym systemie cyberbezpieczeństwa", "dla Urzędu Miasta Gdyni, Zarządu Dróg Miejskich"]},
+   {"tekst": "Według uzasadnienia chodzi m.in. o zgłaszanie i obsługę incydentów oraz wymianę ostrzeżeń dotyczących cyberbezpieczeństwa.",
+    "cytaty": ["zgłaszanie i obsługa incydentów, a także wymiana informacji, ostrzeżeń i zaleceń dotyczących cyberbezpieczeństwa"]}
+  ]},
+  "XXXVI/940/26": {"zdania": [
+   {"tekst": "Rada powołała komisję doraźną (do określonego zadania), która przejrzy Statut Miasta Gdyni i przygotuje projekt jego zmian.",
+    "cytaty": ["Powołuje się doraźną komisję do spraw zmian Statutu Miasta Gdyni", "rada gminy może powoływać ze swojego grona komisje stałe i doraźne do określonych zadań", "przygotowanie i przedstawienie Radzie Miasta Gdyni projektu uchwały zmieniającej ten statut"]},
+   {"tekst": "W komisji jest 8 radnych; według uzasadnienia statut to podstawowy dokument o tym, jak działają miasto i jego władze, uchwalony w 2004 roku.",
+    "cytaty": ["1) Marek Dudziński", "8) Jarosław Kłodziński", "Statut Miasta Gdyni jest podstawowym aktem regulującym ustrój Gminy Miasta Gdyni, w tym organizację i tryb pracy jej organów i został uchwalony w 2004 roku"]}
+  ]}
+ }
+}
