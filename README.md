@@ -140,17 +140,21 @@ które publikują PDF wygenerowane przez app.esesja.pl. Do zmiany:
 4. Jeśli miasto publikuje głosowania tylko w portalu eSesji, potrzebna jest
    zgoda lub dostęp od operatora eSesji, bo portale są za blokadą anty-botową.
 
-## Licencja: do wyboru
+## Licencja
 
-Uchwały i ich projekty nie podlegają prawu autorskiemu (art. 4 ustawy
-o prawie autorskim i prawach pokrewnych). Licencja dotyczy kodu oraz
-naszych opisów i danych.
-
-| | Kod | Dane i opisy |
+| Co | Licencja | Plik |
 |---|---|---|
-| Wariant A | **EUPL-1.2**: licencja UE z oficjalną wersją polską; zmiany kodu udostępnione w sieci muszą pozostać otwarte | **CC BY 4.0**: każdy może korzystać, z podaniem źródła |
-| Wariant B | **MIT**: najprostsza, dowolne użycie | **CC0 1.0**: domena publiczna, bez warunków |
-| Wariant C | **AGPL-3.0**: jak EUPL, silniej chroni serwisy sieciowe | **ODbL 1.0**: bazy danych, pochodne bazy na tej samej licencji |
+| Kod (`corobiwladza/`, `tests/`) | **EUPL-1.2** (European Union Public Licence) | [`LICENSE`](LICENSE) |
+| Dane i teksty projektu (`data/`, opisy „po ludzku”, „A co dla mnie?”, wygenerowana strona `site/`) | **CC BY 4.0** (Creative Commons Uznanie autorstwa 4.0) | [`LICENSES/CC-BY-4.0.txt`](LICENSES/CC-BY-4.0.txt) |
 
-Moja rekomendacja: wariant A (EUPL-1.2 + CC BY 4.0). Plik `LICENSE` dodam
-po Twoim wyborze.
+Przy ponownym użyciu danych lub opisów podaj źródło: **Co robi władza?
+(corobiwladza.pl)**.
+
+EUPL-1.2 ma równorzędne oficjalne wersje we wszystkich językach UE, także
+po polsku: https://joinup.ec.europa.eu/page/eupl-text-11-12.
+W repozytorium jest wersja angielska (tekst z listy SPDX).
+
+Dokumenty źródłowe (uchwały, ich projekty, PDF z wynikami głosowań)
+pochodzą z BIP Urzędu Miasta Gdyni. Uchwały i ich projekty nie podlegają
+prawu autorskiemu (art. 4 ustawy o prawie autorskim i prawach pokrewnych),
+więc licencje projektu ich nie obejmują.
